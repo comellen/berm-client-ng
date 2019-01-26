@@ -1,11 +1,12 @@
-@import url("https://fonts.googleapis.com/css?family=Exo+2:600i");
-
 .logo {
   font-family: "Exo 2", sans-serif;
   font-size: 40px;
   color: #333;
+  text-decoration: none;
 }
-/* TODO: import Lato font */
+.logo:hover {
+    cursor: pointer;
+}
 .navbar {
   font-family: "Lato", sans-serif;
   background: rgb(247, 246, 246);
@@ -21,4 +22,5 @@
 .navlink:hover {
   text-decoration: none;
   color: #333;
+  cursor: pointer;
 }
