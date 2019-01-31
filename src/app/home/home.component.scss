@@ -16,9 +16,14 @@ $accent: map-get($berm-theme, accent);
 }
 .card {
   width: 350px;
-  height: 200px;
+  height: 500px;
   place-self: center;
 }
+// .card-button-route {
+//     position: absolute;
+//     right: 10px;
+//     bottom: 10px;
+// }
 button {
   color: #fff !important;
   font-size: 3em;
