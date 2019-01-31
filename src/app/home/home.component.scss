@@ -1,0 +1,25 @@
+@import "src/theme.scss";
+$primary: map-get($berm-theme, primary);
+$accent: map-get($berm-theme, accent);
+
+.about {
+  margin: 0;
+  padding: 10px 20px;
+  background-color: mat-color($primary, lighter);
+}
+.logo-text {
+  font-family: "Exo 2", sans-serif;
+}
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(3, auto [col-start]);
+}
+.card {
+  width: 350px;
+  height: 200px;
+  place-self: center;
+}
+button {
+  color: #fff !important;
+  font-size: 3em;
+}

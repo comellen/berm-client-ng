@@ -1,0 +1,12 @@
+@import '~@angular/material/theming';
+
+$berm-theme-primary: mat-palette($mat-grey, 600, 300, 900);
+$berm-theme-accent: mat-palette($mat-orange, 500, 200, 700);
+$berm-theme-warn: mat-palette($mat-red, 500);
+
+
+$berm-theme: mat-light-theme(
+    $berm-theme-primary,
+    $berm-theme-accent,
+    $berm-theme-warn
+);
