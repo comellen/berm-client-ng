@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatCardModule } from '@angular/material/card';
@@ -14,6 +15,9 @@ import { RidesComponent } from './rides/rides.component';
 import { HomeComponent } from './home/home.component';
 import { NavComponent } from './nav/nav.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { AddRideComponent } from './add-ride/add-ride.component';
+import { AddTrailComponent } from './add-trail/add-trail.component';
+import { AddBikeComponent } from './add-bike/add-bike.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -32,7 +36,10 @@ const routes: Routes = [
     RidesComponent,
     HomeComponent,
     NavComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    AddRideComponent,
+    AddTrailComponent,
+    AddBikeComponent
   ],
   imports: [
     BrowserModule,
@@ -40,9 +47,15 @@ const routes: Routes = [
     MatToolbarModule,
     MatCardModule,
     MatButtonModule,
-    MatDialogModule
+    MatDialogModule,
+    BrowserAnimationsModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [
+    AddRideComponent,
+    AddTrailComponent,
+    AddBikeComponent
+  ]
 })
 export class AppModule { }

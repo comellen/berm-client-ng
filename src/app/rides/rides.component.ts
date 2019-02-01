@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material';
+import { AddRideComponent } from '@app/add-ride/add-ride.component';
 
 @Component({
   selector: 'app-rides',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RidesComponent implements OnInit {
 
-  constructor() { }
+  constructor(private dialog: MatDialog) { }
 
   ngOnInit() {
   }
 
+  openDialog() {
+    this.dialog.open(AddRideComponent);
+  }
 }

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material';
+import { AddTrailComponent } from '@app/add-trail/add-trail.component';
 
 @Component({
   selector: 'app-trails',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TrailsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private dialog: MatDialog) { }
 
   ngOnInit() {
   }
 
+  openDialog() {
+    this.dialog.open(AddTrailComponent);
+  }
 }
