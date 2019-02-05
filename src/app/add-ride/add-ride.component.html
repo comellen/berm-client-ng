@@ -1,3 +1,26 @@
-<p>
-  add-ride works!
-</p>
+<form class="add-ride-form" [formGroup]="addRideForm">
+  <mat-dialog-content>
+    <mat-form-field class="add-ride-input">
+      <input matInput placeholder="Trail">
+    </mat-form-field>
+    <mat-form-field class="add-ride-input">
+      <input matInput placeholder="Location">
+    </mat-form-field>
+    <mat-form-field class="add-ride-input">
+      <input matInput placeholder="Bike">
+    </mat-form-field>
+    <mat-form-field class="add-ride-input">
+      <input matInput placeholder="Location">
+    </mat-form-field>
+    <mat-form-field class="add-ride-input">
+      <input matInput placeholder="Location">
+    </mat-form-field>
+    <mat-form-field class="add-ride-input">
+      <textarea matInput placeholder="Notes"></textarea>
+    </mat-form-field>
+  </mat-dialog-content>
+  <mat-dialog-actions align="end">
+    <!-- add cancel 'x' to top left of box..-->
+      <button mat-button color="accent" type="submit">Submit</button>
+  </mat-dialog-actions>
+</form>

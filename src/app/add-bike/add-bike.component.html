@@ -1,3 +1,60 @@
-<p>
-  add-bike works!
-</p>
+<form class="add-bike-form" [formGroup]="addBikeForm">
+  <mat-dialog-content>
+    <mat-form-field class="add-bike-input">
+      <input matInput placeholder="Brand">
+    </mat-form-field>
+    <mat-form-field class="add-bike-input">
+      <input matInput placeholder="Model">
+    </mat-form-field>
+    <mat-form-field class="add-bike-input">
+      <input matInput placeholder="Year">
+    </mat-form-field>
+    <mat-form-field class="add-bike-input">
+      <input matInput placeholder="Frame">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-select placeholder="Suspension">
+        <mat-option *ngFor="let suspension of suspensions" [value]="suspension.value">
+          {{suspension.viewValue}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field class="add-bike-input">
+      <input matInput placeholder="Fork">
+    </mat-form-field>
+    <mat-form-field class="add-bike-input">
+      <input matInput placeholder="Shock">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-select placeholder="Wheel size">
+        <mat-option *ngFor="let size of wheelSizes" [value]="size.value">
+          {{size.viewValue}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field class="add-bike-input">
+      <input matInput placeholder="Shifters">
+    </mat-form-field>
+    <mat-form-field class="add-bike-input">
+      <input matInput placeholder="Derailleur">
+    </mat-form-field>
+    <mat-form-field class="add-bike-input">
+      <input matInput placeholder="Cassette">
+    </mat-form-field>
+    <mat-form-field class="add-bike-input">
+      <input matInput placeholder="Brakes">
+    </mat-form-field>
+    <mat-form-field class="add-bike-input">
+      <input matInput placeholder="Tires">
+    </mat-form-field>
+    <mat-form-field class="add-bike-input">
+      <textarea matInput placeholder="Additional components">
+    </mat-form-field>
+    <mat-form-field class="add-bike-input">
+      <textarea matInput placeholder="Planned upgrades">
+    </mat-form-field>
+  </mat-dialog-content>
+  <mat-dialog-actions align="end">
+      <button mat-button color="accent" type="submit">Submit</button>
+  </mat-dialog-actions>
+</form>
