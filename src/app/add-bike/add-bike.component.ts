@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, FormControl } from '@angular/forms';
 import { MatDialog, MatDialogRef } from '@angular/material';
-import { MatSelectModule } from '@angular/material/select';
 
 export interface Size {
   value: string;

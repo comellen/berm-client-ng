@@ -14,7 +14,7 @@
     </mat-form-field>
     <mat-form-field>
       <mat-select placeholder="Suspension">
-        <mat-option *ngFor="let suspension of suspensions" [value]="suspension.value">
+        <mat-option *ngFor="let suspension of suspensions" value="suspension.value">
           {{suspension.viewValue}}
         </mat-option>
       </mat-select>
@@ -27,7 +27,7 @@
     </mat-form-field>
     <mat-form-field>
       <mat-select placeholder="Wheel size">
-        <mat-option *ngFor="let size of wheelSizes" [value]="size.value">
+        <mat-option *ngFor="let size of wheelSizes" value="size.value">
           {{size.viewValue}}
         </mat-option>
       </mat-select>
@@ -48,10 +48,10 @@
       <input matInput placeholder="Tires">
     </mat-form-field>
     <mat-form-field class="add-bike-input">
-      <textarea matInput placeholder="Additional components">
+      <textarea matInput placeholder="Additional components"></textarea>
     </mat-form-field>
     <mat-form-field class="add-bike-input">
-      <textarea matInput placeholder="Planned upgrades">
+      <textarea matInput placeholder="Planned upgrades"></textarea>
     </mat-form-field>
   </mat-dialog-content>
   <mat-dialog-actions align="end">
