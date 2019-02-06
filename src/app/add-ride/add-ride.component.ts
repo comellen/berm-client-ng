@@ -9,7 +9,6 @@ import { MatDialog, MatDialogRef } from '@angular/material';
 })
 export class AddRideComponent implements OnInit {
   addRideForm: FormGroup;
-  loading: any;
 
   constructor(
     private formBuilder: FormBuilder,

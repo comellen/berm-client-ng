@@ -19,7 +19,6 @@ export interface Suspension {
 })
 export class AddBikeComponent implements OnInit {
   addBikeForm: FormGroup;
-  loading: any;
 
   wheelSizes: Size[] = [
     {value: 'none', viewValue: 'None'},
@@ -40,6 +39,7 @@ export class AddBikeComponent implements OnInit {
     public dialog: MatDialog
   ) { }
 
+  //TODO: double check server-side model for key strings
   ngOnInit() {
     this.addBikeForm = this.formBuilder.group({
       "brand": new FormControl(),
@@ -49,14 +49,14 @@ export class AddBikeComponent implements OnInit {
       "suspension": new FormControl(),
       "fork": new FormControl(),
       "shock": new FormControl(),
-      "wheel size": new FormControl(),
+      "wheelSize": new FormControl(),
       "shifters": new FormControl(),
       "derailleur": new FormControl(),
       "cassette": new FormControl(),
       "brakes": new FormControl(),
       "tires": new FormControl(),
-      "additional components": new FormControl(),
-      "planned upgrades": new FormControl()
+      "additionalComponents": new FormControl(),
+      "plannedUpgrades": new FormControl()
     });
   }
 
