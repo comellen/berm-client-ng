@@ -25,6 +25,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { AddRideComponent } from './add-ride/add-ride.component';
 import { AddTrailComponent } from './add-trail/add-trail.component';
 import { AddBikeComponent } from './add-bike/add-bike.component';
+import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -46,7 +47,8 @@ const routes: Routes = [
     PageNotFoundComponent,
     AddRideComponent,
     AddTrailComponent,
-    AddBikeComponent
+    AddBikeComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
