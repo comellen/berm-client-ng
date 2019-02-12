@@ -4,10 +4,21 @@ import { map } from 'rxjs/operators';
 
 const apiUrl = 'http://localhost:3000';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class AuthService {
+  constructor(private http: HttpClient) { }
 
-  constructor() { }
+  login(email: string, password: string) {
+    return this.http.post<any>(apiUrl + '/user/login', { email, password })
+      .pipe(map(user => {
+        if (user && user.sessionToken) {
+          sessionStorage.setItem('currentUser', JSON.stringify(user));
+        }
+        return user;
+      }));
+  }
+
+  logout() {
+    sessionStorage.clear();
+  }
 }
