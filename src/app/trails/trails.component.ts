@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material';
-import { AddTrailComponent } from '@app/add-trail/add-trail.component';
+import { AddTrailComponent } from '@app/trails/add-trail/add-trail.component';
 
 @Component({
   selector: 'app-trails',

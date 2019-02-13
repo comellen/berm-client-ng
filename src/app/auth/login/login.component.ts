@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 
+
 import { AuthService } from '@app/services/auth.service';
 
 @Component({
@@ -21,6 +22,8 @@ export class LoginComponent implements OnInit {
     private router: Router,
     private authService: AuthService) { }
   
+
+    //TODO: FIXME: Redo this formBuilder. Errors not registering client-side
   ngOnInit() {
     this.loginForm = this.formBuilder.group({
       email: ['', Validators.required, Validators.email],

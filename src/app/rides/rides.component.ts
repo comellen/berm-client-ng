@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material';
-import { AddRideComponent } from '@app/add-ride/add-ride.component';
+import { AddRideComponent } from '@app/rides/add-ride/add-ride.component';
 
 @Component({
   selector: 'app-rides',

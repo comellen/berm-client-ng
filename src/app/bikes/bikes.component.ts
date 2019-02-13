@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material';
-import { AddBikeComponent } from '@app/add-bike/add-bike.component';
+import { AddBikeComponent } from '@app/bikes/add-bike/add-bike.component';
 
 @Component({
   selector: 'app-bikes',
