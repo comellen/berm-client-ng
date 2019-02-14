@@ -4,6 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { first } from 'rxjs/operators';
 
 import { UserService } from '@app/services/user.service';
+import { AlertService } from '@app/services/alert.service';
 
 @Component({
   selector: 'app-signup',
@@ -21,7 +22,8 @@ export class SignupComponent implements OnInit {
     private formBuilder: FormBuilder,
     private route: ActivatedRoute,
     private router: Router,
-    private userService: UserService) { }
+    private userService: UserService,
+    private alertService: AlertService) { }
 
   ngOnInit() {
     this.signupForm = this.formBuilder.group({
@@ -56,8 +58,8 @@ export class SignupComponent implements OnInit {
       .pipe(first())
       .subscribe(
         data => {
-          this.alertService.success('Registration successful', false);
-          this.router.navigate(['/login']);
+          this.alertService.success('Sign up successful', false);
+          this.router.navigate(['/signup-success']);
         },
         error => {
           this.alertService.error(error);

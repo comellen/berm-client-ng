@@ -31,6 +31,7 @@ import { LoginComponent } from '@app/auth/login/login.component';
 
 import { AuthService } from './services/auth.service';
 import { SignupComponent } from './auth/signup/signup.component';
+import { SignupSuccessComponent } from './signup-success/signup-success.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -54,7 +55,8 @@ const routes: Routes = [
     AddTrailComponent,
     AddBikeComponent,
     LoginComponent,
-    SignupComponent
+    SignupComponent,
+    SignupSuccessComponent
   ],
   imports: [
     BrowserModule,

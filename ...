@@ -1,0 +1,5 @@
+Unstaged changes after reset:
+M	src/app/app.module.ts
+M	src/app/auth/login/login.component.ts
+M	src/app/auth/signup/signup.component.ts
+M	src/app/models/user.ts
