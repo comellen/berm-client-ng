@@ -30,6 +30,7 @@ import { AddBikeComponent } from '@app/bikes/add-bike/add-bike.component';
 import { LoginComponent } from '@app/auth/login/login.component';
 
 import { AuthService } from './services/auth.service';
+import { SignupComponent } from './auth/signup/signup.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -52,7 +53,8 @@ const routes: Routes = [
     AddRideComponent,
     AddTrailComponent,
     AddBikeComponent,
-    LoginComponent
+    LoginComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,

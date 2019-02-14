@@ -1,38 +1,38 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { first } from 'rxjs/operators';
 
-import { AuthService } from '@app/services/auth.service';
+import { UserService } from '@app/services/user.service';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+  selector: 'app-signup',
+  templateUrl: './signup.component.html',
+  styleUrls: ['./signup.component.scss']
 })
-export class LoginComponent implements OnInit {
-  loginForm: FormGroup;
+export class SignupComponent implements OnInit {
+  signupForm: FormGroup;
   submitted = false;
   returnUrl: string;
   loading = false;
+  keepAfterNavigationChange = false;
 
   constructor(
     private formBuilder: FormBuilder,
     private route: ActivatedRoute,
     private router: Router,
-    private authService: AuthService) { }
-  
+    private userService: UserService) { }
 
-    //TODO: FIXME: Redo this formBuilder. Errors not registering client-side
   ngOnInit() {
-    this.loginForm = this.formBuilder.group({
+    this.signupForm = this.formBuilder.group({
       email: ['', Validators.required, Validators.email],
-      password: ['', Validators.required, Validators.minLength(6)]
+      password: ['', Validators.required]
     });
     // this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
   }
-  
-  get f() { return this.loginForm.controls; }
-  
+
+  get f() { return this.signupForm.controls; }
+
   getEmailError() {
     return this.f.email.hasError('required') ? 'Enter email' :
       this.f.email.hasError('email') ? 'Enter valid email' :
@@ -47,10 +47,21 @@ export class LoginComponent implements OnInit {
 
   onSubmit() {
     this.submitted = true;
-    if (this.loginForm.invalid) {
+    this.keepAfterNavigationChange = false;
+    if (this.signupForm.invalid) {
       return;
     }
     this.loading = true;
-    this.authService.login(this.f.email.value, this.f.password.value)
+    this.userService.signup(this.signupForm.value)
+      .pipe(first())
+      .subscribe(
+        data => {
+          this.alertService.success('Registration successful', false);
+          this.router.navigate(['/login']);
+        },
+        error => {
+          this.alertService.error(error);
+          this.loading = false;
+        });
   }
 }
