@@ -19,19 +19,19 @@ export class LoginComponent implements OnInit {
     private formBuilder: FormBuilder,
     private route: ActivatedRoute,
     private authService: AuthService) { }
-  
 
-    //TODO: FIXME: Redo this formBuilder. Errors not registering client-side
+
+  //TODO: FIXME: Redo this formBuilder. Errors not registering client-side
   ngOnInit() {
     this.loginForm = this.formBuilder.group({
       email: ['', Validators.required, Validators.email],
-      password: ['', Validators.required, Validators.minLength(6)]
+      password: ['', Validators.required]
     });
     // this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
   }
-  
+
   get f() { return this.loginForm.controls; }
-  
+
   getEmailError() {
     return this.f.email.hasError('required') ? 'Enter email' :
       this.f.email.hasError('email') ? 'Enter valid email' :
@@ -40,8 +40,7 @@ export class LoginComponent implements OnInit {
 
   getPasswordError() {
     return this.f.password.hasError('required') ? 'Enter password' :
-      this.f.password.hasError('minLength') ? 'Password must be at least 6 characters' :
-        '';
+      '';
   }
 
   onSubmit() {
