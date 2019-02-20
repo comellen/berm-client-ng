@@ -23,7 +23,7 @@ export const ROUTES: Routes = [
   { 
     path: 'login',
     component: LoginComponent,
-    data: { title: 'Home' }
+    data: { title: 'Login' }
   },
   { 
     path: 'signup',
@@ -48,7 +48,7 @@ export const ROUTES: Routes = [
     canActivate: [AuthGuard],
     data: { title: 'Trails' }
   },
-  { path: '**', redirectTo: '' }
+  // { path: '**', redirectTo: '' }
 ];
 
 

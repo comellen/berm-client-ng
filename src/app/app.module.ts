@@ -4,6 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { JwtModule } from '@auth0/angular-jwt';
 
 import {
   MatToolbarModule,
@@ -67,7 +68,12 @@ import { ROUTES } from '@app/app-routing.module';
     MatDatepickerModule,
     MatNativeDateModule,
     MatIconModule,
-    HttpClientModule
+    HttpClientModule,
+    JwtModule.forRoot({
+      config: {
+        tokenGetter: () => { return localStorage.getItem('sessionToken') },
+      }
+    })
   ],
   providers: [
     AuthService
