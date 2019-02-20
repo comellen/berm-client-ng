@@ -23,13 +23,11 @@ export const ROUTES: Routes = [
   { 
     path: 'login',
     component: LoginComponent,
-    canActivate: [AuthGuard],
     data: { title: 'Home' }
   },
   { 
     path: 'signup',
     component: SignupComponent,
-    canActivate: [AuthGuard],
     data: { title: 'Sign Up' }
   },
   { 
