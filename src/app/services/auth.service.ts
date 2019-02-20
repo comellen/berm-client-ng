@@ -1,9 +1,15 @@
 import { Injectable } from '@angular/core';
+import { JwtHelperService } from '@auth0/angular-jwt';
 
 const apiUrl = 'http://localhost:3000';
 
 @Injectable()
 export class AuthService {
-  constructor() { }
 
+  constructor(public jwtHelper: JwtHelperService) { }
+
+  public isAuthenticated(): boolean {
+    const token = localStorage.getItem('sessionToken');
+    return !this.jwtHelper.isTokenExpired(token);
+  }
 }

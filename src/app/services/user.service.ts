@@ -10,7 +10,7 @@ const apiUrl = 'http://localhost:3000'
   providedIn: 'root'
 })
 export class UserService {
-
+  
   constructor(private http: HttpClient) { }
 
   login(email: string, password: string) {
