@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 
-import { AuthService } from '@app/services/auth.service';
+import { UserService } from '@app/services/user.service';
 
 @Component({
   selector: 'app-login',
@@ -18,7 +18,7 @@ export class LoginComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private route: ActivatedRoute,
-    private authService: AuthService) { }
+    private userService: UserService) { }
 
 
   //TODO: FIXME: Redo this formBuilder. Errors not registering client-side
@@ -49,6 +49,6 @@ export class LoginComponent implements OnInit {
       return;
     }
     this.loading = true;
-    this.authService.login(this.f.email.value, this.f.password.value)
+    this.userService.login(this.f.email.value, this.f.password.value)
   }
 }
