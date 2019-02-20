@@ -33,6 +33,8 @@ import { AuthService } from './services/auth.service';
 import { SignupComponent } from './auth/signup/signup.component';
 import { SignupSuccessComponent } from './signup-success/signup-success.component';
 
+import { ROUTES } from '@app/app-routing.module';
+
 
 
 @NgModule({
@@ -53,7 +55,7 @@ import { SignupSuccessComponent } from './signup-success/signup-success.componen
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(routes),
+    RouterModule.forRoot(ROUTES),
     MatToolbarModule,
     MatCardModule,
     MatButtonModule,
