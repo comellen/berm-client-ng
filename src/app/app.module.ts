@@ -33,14 +33,7 @@ import { AuthService } from './services/auth.service';
 import { SignupComponent } from './auth/signup/signup.component';
 import { SignupSuccessComponent } from './signup-success/signup-success.component';
 
-const routes: Routes = [
-  { path: '', component: HomeComponent },
-  { path: 'bikes', component: BikesComponent },
-  { path: 'trails', component: TrailsComponent },
-  { path: 'rides', component: RidesComponent },
-  { path: 'home', redirectTo: '' },
-  { path: '**', component: PageNotFoundComponent },
-];
+
 
 @NgModule({
   declarations: [
