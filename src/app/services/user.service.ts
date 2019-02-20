@@ -17,7 +17,7 @@ export class UserService {
     return this.http.post<any>(apiUrl + '/user/login', { email, password })
       .pipe(map(user => {
         if (user && user.sessionToken) {
-          sessionStorage.setItem('sessionToken', JSON.stringify(user.sessionToken));
+          localStorage.setItem('sessionToken', JSON.stringify(user.sessionToken));
         }
         return user;
       }));
@@ -32,6 +32,6 @@ export class UserService {
   }
 
   logout() {
-    sessionStorage.clear();
+    localStorage.clear();
   }
 }
