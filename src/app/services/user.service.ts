@@ -10,14 +10,14 @@ const apiUrl = 'http://localhost:3000'
   providedIn: 'root'
 })
 export class UserService {
-  
+
   constructor(private http: HttpClient) { }
 
   login(email: string, password: string) {
     return this.http.post<any>(apiUrl + '/user/login', { email, password })
       .pipe(map(user => {
         if (user && user.sessionToken) {
-          sessionStorage.setItem('currentUser', JSON.stringify(user));
+          sessionStorage.setItem('sessionToken', JSON.stringify(user.sessionToken));
         }
         return user;
       }));
