@@ -1,15 +1,15 @@
-<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit()" className="authForm">
   <div id="loginEmail">
     <mat-form-field appearance="outline">
       <mat-label>Email</mat-label>
-      <input formControlNamne="email" matInput placeholder="you@email.com">
+      <input formControlName="email" matInput placeholder="you@email.com">
       <mat-error *ngIf="f.email.invalid">{{getEmailError()}}</mat-error>
     </mat-form-field>
   </div>
   <div id="loginPassword">
     <mat-form-field appearance="outline">
       <mat-label>Password</mat-label>
-      <input formControlNamne="password" matInput placeholder="••••••••" type="password">
+      <input formControlName="password" matInput placeholder="••••••••" type="password">
       <mat-error *ngIf="f.password.invalid">{{getPasswordError()}}</mat-error>
     </mat-form-field>
   </div>
