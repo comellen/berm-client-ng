@@ -5,7 +5,7 @@ $accent: map-get($berm-theme, accent);
 .logo {
     font-family: "Exo 2", sans-serif;
     font-size: 40px;
-    color: mat-color($primary, darker);
+    color: #fff;
     text-decoration: none;
   }
   .logo:hover {
@@ -19,12 +19,12 @@ $accent: map-get($berm-theme, accent);
     flex: 1 1 auto;
   }
   .navlink {
-    color: mat-color($primary, lighter);
+    color: #fff;
     margin-right: 2em;
   }
   .navlink:hover {
     text-decoration: none;
-    color: #fff;
+    color: mat-color($primary, lighter);
     cursor: pointer;
   }
   
