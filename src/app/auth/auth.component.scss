@@ -1,0 +1,29 @@
+.authForm {
+  background-color: #ddd;
+  width: 100%;
+  height: 300px;
+}
+.authFormWrapper {
+  padding-top: 3em;
+  width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+  height: 100%;
+}
+.emailField {
+  text-align: center;
+}
+.passwordField {
+  text-align: center;
+}
+.authFormActions {
+  margin: auto;
+  width: 204px;
+  text-align: right;
+}
+.authCall {
+  margin: 0 auto;
+  padding-top: 1.5em;
+  text-align: center;
+  font-size: 10pt;
+}
