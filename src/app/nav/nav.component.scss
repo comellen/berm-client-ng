@@ -22,7 +22,7 @@ $accent: map-get($berm-theme, accent);
 }
 .navlink {
   color: mat-color($primary, lighter);
-  margin-right: 2em;
+  margin: 0 1em;
 }
 .navlink:hover {
   text-decoration: none;

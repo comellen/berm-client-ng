@@ -37,18 +37,18 @@ export const ROUTES: Routes = [
     data: { title: 'Bikes' }
   },
   { 
-    path: 'Rides',
+    path: 'rides',
     component: RidesComponent,
     canActivate: [AuthGuard],
     data: { title: 'Rides' }
   },
   { 
-    path: 'Trails',
+    path: 'trails',
     component: TrailsComponent,
     canActivate: [AuthGuard],
     data: { title: 'Trails' }
   },
-  // { path: '**', redirectTo: '' }
+  { path: '**', redirectTo: '' }
 ];
 
 
