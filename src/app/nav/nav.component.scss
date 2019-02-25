@@ -1,6 +1,7 @@
 @import "src/theme.scss";
 $primary: map-get($berm-theme, primary);
 $accent: map-get($berm-theme, accent);
+@import '~@angular/material/theming';
 
 .logo {
   font-family: "Exo 2", sans-serif;
@@ -14,13 +15,14 @@ $accent: map-get($berm-theme, accent);
 .navbar {
   font-family: "Lato", sans-serif;
   margin: 0;
+  @include mat-elevation(1);
 }
 .fill-remaining-space {
   flex: 1 1 auto;
 }
 .navlink {
   color: mat-color($primary, lighter);
-  margin-right: 2em;
+  margin: 0 1em;
 }
 .navlink:hover {
   text-decoration: none;
