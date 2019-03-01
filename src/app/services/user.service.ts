@@ -14,7 +14,7 @@ export class UserService {
   constructor(private http: HttpClient) { }
 
   login(user: User) {
-    return this.http.post<any>(apiUrl + '/user/login', user)
+    return this.http.post<any>(apiUrl + '/user/login', { user: user })
       .pipe(map(user => {
         if (user && user.sessionToken) {
           localStorage.setItem('sessionToken', JSON.stringify(user.sessionToken));
@@ -24,11 +24,12 @@ export class UserService {
   }
 
   signup(user: User) {
-    return this.http.post(apiUrl + '/user/signup', user);
+    console.log(user);
+    return this.http.post(apiUrl + '/user/signup', { user: user });
   }
 
   update(user: User) {
-    return this.http.put(`/user/` + user.id, user);
+    return this.http.put(`/user/` + user.id, { user: user });
   }
 
   logout() {
