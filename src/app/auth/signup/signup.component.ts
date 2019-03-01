@@ -43,7 +43,7 @@ export class SignupComponent implements OnInit {
 
   getPasswordError() {
     return this.f.password.hasError('required') ? 'Enter password' :
-      this.f.password.hasError('minLength') ? 'Password must be at least 6 characters' :
+      this.f.password.hasError('minlength') ? 'Password must be at least 6 characters' :
         '';
   }
 
