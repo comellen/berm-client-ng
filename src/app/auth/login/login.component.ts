@@ -20,8 +20,6 @@ export class LoginComponent implements OnInit {
     private route: ActivatedRoute,
     private userService: UserService) { }
 
-
-  //TODO: FIXME: Redo this formBuilder. Errors not registering client-side
   ngOnInit() {
     this.loginForm = this.formBuilder.group({
       email: ['', Validators.compose([Validators.required, Validators.email]) ],
