@@ -29,6 +29,6 @@ $accent: map-get($berm-theme, accent);
 }
 .navlink:hover {
   text-decoration: none;
-  color: mat-color($accent, lighter);
+  color: mat-color($primary, lighter);
   cursor: pointer;
 }
