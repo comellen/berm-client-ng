@@ -13,8 +13,8 @@ export class UserService {
 
   constructor(private http: HttpClient) { }
 
-  login(email: string, password: string) {
-    return this.http.post<any>(apiUrl + '/user/login', { email, password })
+  login(user: User) {
+    return this.http.post<any>(apiUrl + '/user/login', user)
       .pipe(map(user => {
         if (user && user.sessionToken) {
           localStorage.setItem('sessionToken', JSON.stringify(user.sessionToken));

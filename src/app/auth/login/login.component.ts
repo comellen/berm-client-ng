@@ -47,6 +47,6 @@ export class LoginComponent implements OnInit {
       return;
     }
     this.loading = true;
-    this.userService.login(this.f.email.value, this.f.password.value)
+    this.userService.login(this.loginForm.value);
   }
 }
