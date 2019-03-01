@@ -15,24 +15,31 @@ export class UserService {
 
   login(user: User) {
     return this.http.post<any>(apiUrl + '/user/login', { user: user })
-      .pipe(map(user => {
-        if (user && user.sessionToken) {
-          localStorage.setItem('sessionToken', JSON.stringify(user.sessionToken));
+      .pipe(map(data => {
+        if (data && data.sessionToken) {
+          sessionStorage.setItem('sessionToken', JSON.stringify(data.sessionToken));
         }
-        return user;
+        return data;
       }));
   }
 
   signup(user: User) {
-    console.log(user);
-    return this.http.post(apiUrl + '/user/signup', { user: user });
-  }
+    return this.http.post<any>(apiUrl + '/user/signup', { user: user })
+      .pipe(map(data => {
+      if (data && data.sessionToken) {
+        sessionStorage.setItem('sessionToken', JSON.stringify(data.sessionToken));
+      }
+      return data;
+    }));
+}
 
-  update(user: User) {
-    return this.http.put(`/user/` + user.id, { user: user });
-  }
+
+// TODO: FIXME: Add update user function to server.
+  // update(user: User) {
+  //   return this.http.put(`/user/` + user.id, { user: user });
+  // }
 
   logout() {
-    localStorage.clear();
+    sessionStorage.clear();
   }
 }
