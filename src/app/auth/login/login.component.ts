@@ -24,7 +24,7 @@ export class LoginComponent implements OnInit {
   //TODO: FIXME: Redo this formBuilder. Errors not registering client-side
   ngOnInit() {
     this.loginForm = this.formBuilder.group({
-      email: ['', Validators.required, Validators.email],
+      email: ['', Validators.compose([Validators.required, Validators.email]) ],
       password: ['', Validators.required]
     });
     // this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
