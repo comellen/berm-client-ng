@@ -1,12 +1,3 @@
-@import "src/theme.scss";
-$primary: map-get($berm-theme, primary);
-$accent: map-get($berm-theme, accent);
-
-.about {
-  margin: 0;
-  padding: 10px 20px;
-  background-color: mat-color($primary, lighter);
-}
 .logo-text {
   font-family: "Exo 2", sans-serif;
 }

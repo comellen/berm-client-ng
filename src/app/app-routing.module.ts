@@ -8,6 +8,7 @@ import { HomeComponent } from '@app/home/home.component';
 import { BikesComponent } from '@app/bikes/bikes.component';
 import { RidesComponent } from '@app/rides/rides.component';
 import { TrailsComponent } from '@app/trails/trails.component';
+import { ProfileComponent } from '@app/profile/profile.component';
 
 import { 
   AuthGuardService as AuthGuard 
@@ -47,6 +48,12 @@ export const ROUTES: Routes = [
     component: TrailsComponent,
     canActivate: [AuthGuard],
     data: { title: 'Trails' }
+  },
+  { 
+    path: 'profile',
+    component: ProfileComponent,
+    canActivate: [AuthGuard],
+    data: { title: 'Profile' }
   },
   { path: '**', redirectTo: '' }
 ];

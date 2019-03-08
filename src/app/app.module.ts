@@ -35,6 +35,7 @@ import { SignupComponent } from './auth/signup/signup.component';
 import { SignupSuccessComponent } from './signup-success/signup-success.component';
 
 import { ROUTES } from '@app/app-routing.module';
+import { ProfileComponent } from './profile/profile.component';
 
 
 
@@ -52,7 +53,8 @@ import { ROUTES } from '@app/app-routing.module';
     AddBikeComponent,
     LoginComponent,
     SignupComponent,
-    SignupSuccessComponent
+    SignupSuccessComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
