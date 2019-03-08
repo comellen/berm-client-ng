@@ -59,7 +59,7 @@ export class SignupComponent implements OnInit {
       .subscribe(
         data => {
           this.alertService.success('Sign up successful', false);
-          this.router.navigate(['/signup-success']);
+          this.router.navigate(['/home']);
         },
         error => {
           this.alertService.error(error);
