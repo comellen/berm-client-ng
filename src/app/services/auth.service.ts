@@ -12,4 +12,8 @@ export class AuthService {
     const token = sessionStorage.getItem('sessionToken');
     return !this.jwtHelper.isTokenExpired(token);
   }
+
+  logout() {
+    sessionStorage.clear();
+  }
 }

@@ -39,7 +39,4 @@ export class UserService {
   //   return this.http.put(`/user/` + user.id, { user: user });
   // }
 
-  logout() {
-    sessionStorage.clear();
-  }
 }
