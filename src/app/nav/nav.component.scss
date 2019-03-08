@@ -17,7 +17,7 @@ $accent: map-get($berm-theme, accent);
   margin: 0;
   @include mat-elevation(1);
 }
-.fill-remaining-space {
+.fillRemainingSpace {
   flex: 1 1 auto;
 }
 .navlink {
