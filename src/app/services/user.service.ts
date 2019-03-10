@@ -18,6 +18,7 @@ export class UserService {
       .pipe(map(data => {
         if (data && data.sessionToken) {
           sessionStorage.setItem('sessionToken', JSON.stringify(data.sessionToken));
+          sessionStorage.setItem('user', data.user);
         }
         return data;
       }));
@@ -27,8 +28,8 @@ export class UserService {
     return this.http.post<any>(apiUrl + '/user/signup', { user: user })
       .pipe(map(data => {
       if (data && data.sessionToken) {
-        console.log(data);
         sessionStorage.setItem('sessionToken', JSON.stringify(data.sessionToken));
+        sessionStorage.setItem('user', data.user);
       }
       return data;
     }));
