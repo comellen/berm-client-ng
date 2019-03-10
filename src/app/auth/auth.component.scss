@@ -17,10 +17,7 @@ $accent: map-get($berm-theme, accent);
   padding-top: 3em;
   height: 100%;
 }
-.emailField {
-  text-align: center;
-}
-.passwordField {
+.authField {
   text-align: center;
 }
 .authFormActions {
