@@ -5,14 +5,21 @@
 </div>
 <form class="authForm" [formGroup]="signupForm" (ngSubmit)="onSubmit()">
   <div class="authFormWrapper">
-    <div class="emailField">
+    <div class="authField">
+      <mat-form-field appearance="outline">
+        <mat-label>Username</mat-label>
+        <input formControlName="username" matInput placeholder="username">
+        <mat-error *ngIf="f.username.invalid">{{getUsernameError()}}</mat-error>
+      </mat-form-field>
+    </div>
+    <div class="authField">
       <mat-form-field appearance="outline">
         <mat-label>Email</mat-label>
         <input formControlName="email" matInput placeholder="you@email.com">
         <mat-error *ngIf="f.email.invalid">{{getEmailError()}}</mat-error>
       </mat-form-field>
     </div>
-    <div class="passwordField">
+    <div class="authField">
       <mat-form-field appearance="outline">
         <mat-label>Password</mat-label>
         <input formControlName="password" matInput placeholder="••••••••" type="password">
