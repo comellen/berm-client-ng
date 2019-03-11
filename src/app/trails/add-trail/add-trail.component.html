@@ -1,22 +1,22 @@
-<form class="add-trail-form" [formGroup]="addTrailForm">
+<form class="addTrailForm" [formGroup]="addTrailForm">
   <mat-dialog-content>
-    <mat-form-field class="add-trail-input">
+    <mat-form-field class="addTrailInput">
       <input matInput placeholder="Trail name">
     </mat-form-field>
-    <mat-form-field class="add-trail-input">
+    <mat-form-field class="addTrailInput">
       <input matInput placeholder="Location">
     </mat-form-field>
-    <mat-form-field class="add-trail-input">
+    <mat-form-field class="addTrailInput">
       <input matInput placeholder="Distance">
     </mat-form-field>
-    <mat-form-field class="add-trail-input">
+    <mat-form-field class="addTrailInput">
       <mat-select placeholder="Difficulty">
         <mat-option *ngFor="let difficulty of difficulties" value="difficulty.value">
           {{difficulty.viewValue}}
         </mat-option>
       </mat-select>
     </mat-form-field>
-    <mat-form-field class="add-trail-input">
+    <mat-form-field class="addTrailInput">
       <mat-select placeholder="Completed?">
         <mat-option value="no">
           No
@@ -31,7 +31,7 @@
       <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
       <mat-datepicker #picker color="accent"></mat-datepicker>
     </mat-form-field>
-    <mat-form-field class="notes" class="add-trail-input">
+    <mat-form-field class="notes" class="addTrailInput">
         <textarea matInput placeholder="Notes"></textarea>
       </mat-form-field>
   </mat-dialog-content>

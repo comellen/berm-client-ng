@@ -8,10 +8,12 @@ import { AuthService } from '../services/auth.service';
   styleUrls: ['./profile.component.scss']
 })
 export class ProfileComponent implements OnInit {
+  user: any = sessionStorage.getItem('user');
 
   constructor(private router: Router, private authService: AuthService) { }
 
   ngOnInit() {
+    console.log(this.user);
   }
 
   logout() {
