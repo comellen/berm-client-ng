@@ -28,12 +28,17 @@ export class SignupComponent implements OnInit {
   ngOnInit() {
     this.signupForm = this.formBuilder.group({
       email: ['', Validators.compose([Validators.required, Validators.email]) ],
-      password: ['', Validators.compose([Validators.required, Validators.minLength(6)]) ]
+      password: ['', Validators.compose([Validators.required, Validators.minLength(6)]) ],
+      username: ['', Validators.required]
     });
     // this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
   }
 
   get f() { return this.signupForm.controls; }
+
+  getUsernameError() {
+    return this.f.username.hasError('required') ? 'Enter username' : '';
+  }
 
   getEmailError() {
     return this.f.email.hasError('required') ? 'Enter email' :

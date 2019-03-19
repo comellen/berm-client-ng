@@ -2,10 +2,19 @@
 $primary: map-get($berm-theme, primary);
 $accent: map-get($berm-theme, accent);
 
-.about {
+.aboutContainer {
   margin: 0;
-  padding: 10px 20px;
+  padding: 20px 20px;
   background-color: mat-color($primary, lighter);
+  text-align: justify;
+}
+.aboutText {
+  max-width: 600px;
+  font-size: 14pt;
+  margin: 0 auto;
+}
+.logoText {
+  font-family: "Exo 2", sans-serif;
 }
 .authForm {
   width: 400px;
@@ -17,10 +26,7 @@ $accent: map-get($berm-theme, accent);
   padding-top: 3em;
   height: 100%;
 }
-.emailField {
-  text-align: center;
-}
-.passwordField {
+.authField {
   text-align: center;
 }
 .authFormActions {
