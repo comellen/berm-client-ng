@@ -15,7 +15,8 @@ import {
   MatInputModule,
   MatSelectModule,
   MatDatepickerModule,
-  MatNativeDateModule
+  MatNativeDateModule,
+  MatTableModule
 } from '@angular/material';
 
 import { AppComponent } from '@app/app.component';
@@ -75,7 +76,8 @@ import { ProfileComponent } from './profile/profile.component';
       config: {
         tokenGetter: () => { return localStorage.getItem('sessionToken') },
       }
-    })
+    }),
+    MatTableModule
   ],
   providers: [
     AuthService
