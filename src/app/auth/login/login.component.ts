@@ -1,8 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+
+import { first } from 'rxjs/operators';
 
 import { UserService } from '@app/services/user.service';
+import { AlertService } from '@app/services/alert.service';
 
 @Component({
   selector: 'app-login',
@@ -18,7 +21,9 @@ export class LoginComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private route: ActivatedRoute,
-    private userService: UserService) { }
+    private router: Router,
+    private userService: UserService,
+    private alertService: AlertService) { }
 
   ngOnInit() {
     this.loginForm = this.formBuilder.group({
@@ -47,6 +52,14 @@ export class LoginComponent implements OnInit {
       return;
     }
     this.loading = true;
-    this.userService.login(this.loginForm.value);
+    this.userService.login(this.loginForm.value)
+    .pipe(first())
+    .subscribe(
+        data => { this.router.navigate(['/travall'])
+        },
+        error => {
+            this.alertService.error(error);
+            this.loading = false;
+        });
   }
 }
