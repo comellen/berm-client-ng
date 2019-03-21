@@ -27,16 +27,15 @@ export class UserService {
   signup(user: User) {
     return this.http.post<any>(apiUrl + '/user/signup', { user: user })
       .pipe(map(data => {
-      if (data && data.sessionToken) {
-        sessionStorage.setItem('sessionToken', JSON.stringify(data.sessionToken));
-        sessionStorage.setItem('user', data.user);
-      }
-      return data;
-    }));
-}
+        if (data && data.sessionToken) {
+          sessionStorage.setItem('sessionToken', JSON.stringify(data.sessionToken));
+          sessionStorage.setItem('user', JSON.stringify(data.user));
+        }
+        return data;
+      }));
+  }
 
-
-// TODO: FIXME: Add update user function to server.
+  // TODO: FIXME: Add update user function to server.
   // update(user: User) {
   //   return this.http.put(`/user/` + user.id, { user: user });
   // }
