@@ -18,7 +18,7 @@ export class UserService {
       .pipe(map(data => {
         if (data && data.sessionToken) {
           sessionStorage.setItem('sessionToken', JSON.stringify(data.sessionToken));
-          sessionStorage.setItem('user', data.user);
+          sessionStorage.setItem('user', JSON.stringify(data.user));
         }
         return data;
       }));

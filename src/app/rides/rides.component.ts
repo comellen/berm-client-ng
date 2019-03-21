@@ -19,6 +19,7 @@ export class RidesComponent implements OnInit {
 
   ngOnInit() {
     this.getRides();
+    console.log(this.rides);
   }
 
   getRides() {

@@ -15,6 +15,6 @@ export class RideService {
   constructor(private http: HttpClient) { }
 
   getRides(user: any) {
-    return this.http.get<Ride[]>(apiUrl + '/rides/getall', this.user);
+    return this.http.get<Ride[]>(apiUrl + '/rides/getall', user);
   }
 }
